@@ -1,0 +1,8 @@
+[package]
+name = "compare_guess_random"
+version = "0.1.0"
+authors = ["testuser"]
+
+[dependencies]
+
+rand = "0.4.0"
