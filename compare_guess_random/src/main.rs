@@ -3,13 +3,17 @@
 // Modified Last: May 12, 2018
 
 /*
-There is built-in support for a random number generator (RNG) associated with each thread stored in thread-local storage. This RNG can be accessed via thread_rng, or used implicitly via random. This RNG is normally randomly seeded from an operating-system source of randomness, e.g. /dev/urandom on Unix systems, and will automatically reseed itself from this source after generating 32 KiB of random data.
+There is built-in support for a random number generator (RNG) associated with each thread stored in thread-local storage. 
+This RNG can be accessed via thread_rng, or used implicitly via random. This RNG is normally randomly seeded from an 
+operating-system source of randomness, e.g. /dev/urandom on Unix systems, and will automatically reseed itself from this 
+source after generating 32 KiB of random data.
 Source: https://crates.io/crates/rand
 */
 extern crate rand;
 
 /*
-The std::io module contains a number of common things you'll need when doing input and output. The most core part of this module is the Read and Write traits, which provide the most general interface for reading and writing input and output.
+The std::io module contains a number of common things you'll need when doing input and output. The most core part of this 
+module is the Read and Write traits, which provide the most general interface for reading and writing input and output.
 Source: https://doc.rust-lang.org/std/io/
 */
 use std::io;
@@ -134,7 +138,7 @@ fn main() {
 	 think of {} as little crab pincers that hold a value in place. You can print more than one value using 
 	 curly brackets: the first set of curly brackets holds the first value listed after the format string, the
 	  second set holds the second value, and so on.
-	 Source: 
+	 Source: https://doc.rust-lang.org/book/second-edition/ch02-00-guessing-game-tutorial.html#printing-values-with-println-placeholders
 	 */
      println!("You guessed: {}", guess);
 
@@ -144,7 +148,6 @@ fn main() {
      given to match and looks through each arm’s pattern in turn. The match construct and patterns are powerful
      features in Rust that let you express a variety of situations your code might encounter and make sure that
      you handle them all. These features will be covered in detail in Chapter 6 and Chapter 18, respectively.
-     Source: https://doc.rust-lang.org/book/second-edition/ch02-00-guessing-game-tutorial.html#printing-values-with-println-placeholders
 	 
      Let’s walk through an example of what would happen with the match expression used here. Say that the user 
      as guessed 50 and the randomly generated secret number this time is 38. When the code compares 50 to 38, 
@@ -154,6 +157,7 @@ fn main() {
      the code in that arm and moves to the next arm. The next arm’s pattern, Ordering::Greater, does match 
      Ordering::Greater! The associated code in that arm will execute and print Too big! to the screen. The 
      match expression ends because it has no need to look at the last arm in this scenario.
+     Source: https://doc.rust-lang.org/book/second-edition/ch02-00-guessing-game-tutorial.html#printing-values-with-println-placeholders
      */
      match guess.cmp(&secret_number) {
 	      Ordering::Less => println!("Too small!"),
